@@ -2,43 +2,35 @@
 
 void stack_push(stack_t **stack, unsigned int count)
 {
-    int idx = 0, flag = 0, con_int;
+    int idx = 0, num;
 
-    if (collection.str)
-    {
-        if(collection.str[0] == '-')
-            idx++;
-        while(collection.str[idx])
-        {
-            if (collection.str[idx] > 57 || collection.str[idx] < 48)
-                flag = 1;
-            idx++;
-        }
-        if (flag == 1)
-        {
-            printf("I was led here\n");
-            fprintf(stderr, "L%d: usage: push integer\n", count);
-            fclose(collection.file);
-            free(collection.data);
-            free_s(*stack);
-            exit(EXIT_FAILURE);
-        }
-    else
+    if (collect.str == NULL)
     {
         fprintf(stderr, "L%d: usage: push integer\n", count);
-        handle_error(collection.file, collection.data, stack);
+        free_s();
+        exit(EXIT_FAILURE);
     }
-    con_int = atoi(collection.str);
-    if (collection.change == 0)
-        add_node(stack, con_int);
-    add_queue(stack, con_int);
+    while (collect.str[idx] != '\0')
+    {
+        if (collect.str[idx] != '-' && !(isdigit(collect.str[idx])))
+        {
+            fprintf(stderr, "L%d: usage: push integer\n", count);
+            free_s();
+            exit(EXIT_FAILURE);
+        }
+        idx++;
     }
+    num = atoi(collect.str);
+    if (collect.structure == 1)
+        add_node(stack, num);
+    else
+        add_node_at_end(stack, num);
 }
 
 void stack_queue(stack_t **stack, unsigned int count)
 {
     (void) stack;
-    collection.change = 1;
+    collect.line = 1;
     (void) count;
 }
 
@@ -56,4 +48,17 @@ void stack_pall(stack_t **stack, unsigned int count)
         printf("%d\n", temp->n);
         temp = temp->next;
     }
+}
+
+void stack_pint(stack_t **stack, unsigned int count)
+{
+    (void) count;
+
+    if (*stack == NULL)
+    {
+        fprintf(stderr, "L%d: can't pint, stack empty\n", count);
+        free_s();
+        exit(EXIT_FAILURE);
+    }
+    printf("%d\n", (*stack)->n);
 }

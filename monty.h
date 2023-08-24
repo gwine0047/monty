@@ -52,19 +52,22 @@ typedef struct con
 {
         FILE *file;
         char *str;
-        char *data;
-        int change;
-} collect;
-extern collect collection;
+        char *store;
+        int structure;
+        unsigned int line;
+        stack_t *point;
+} colt;
+extern colt collect;
 
-int call(FILE *file, char *lineptr, unsigned int count, stack_t **stack);
-void free_s(stack_t *stack);
-void handle_error(FILE *file, char *lineptr, stack_t **stack);
-void stack_pop(stack_t **stack, unsigned int count);
-void stack_pall(stack_t **stack, unsigned int count);
-void add_queue(stack_t **stack, int con_int);
-void add_node(stack_t **stack, int con_int);
+void initialize(FILE *file);
+void(*call(char *token))(stack_t **stack, unsigned int line_number);
 void stack_push(stack_t **stack, unsigned int count);
 void stack_queue(stack_t **stack, unsigned int count);
-
+void stack_pall(stack_t **stack, unsigned int count);
+void stack_pint(stack_t **stack, unsigned int count);
+void stack_pop(stack_t **stack, unsigned int count);
+void free_s(void);
+void free_list(stack_t *stack);
+stack_t *add_node(stack_t **stack, int con_int);
+stack_t *add_node_at_end(stack_t **stack, int con_int);
 #endif

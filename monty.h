@@ -1,6 +1,7 @@
 #ifndef _GNU_SOURCE
 #define _GNU_SOURCE
 #endif
+
 #ifndef _MONTY_H
 #define _MONTY_H
 
@@ -75,7 +76,7 @@ stack_t *add_node(stack_t **stack, int con_int);
 stack_t *add_node_at_end(stack_t **stack, int con_int);
 void stack_add(stack_t **stack, unsigned int count);
 void stack_swap(stack_t **stack, unsigned int count);
-void stack_rot1(stack_t **stack, unsigned int count);
+void stack_rotl(stack_t **stack, unsigned int count);
 void stack_rotr(stack_t **stack, unsigned int count);
 void stack_div(stack_t **stack, unsigned int count);
 void _stack(stack_t **stack, unsigned int count);

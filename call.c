@@ -44,6 +44,7 @@ void stack_pstr(stack_t **stack, unsigned int count)
     stack_t *temp;
     (void) count;
 
+    temp = *stack;
     while (temp && temp->n > 0 && temp->n < 128)
     {
         printf("%c", temp->n);

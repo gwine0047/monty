@@ -70,4 +70,8 @@ void free_s(void);
 void free_list(stack_t *stack);
 stack_t *add_node(stack_t **stack, int con_int);
 stack_t *add_node_at_end(stack_t **stack, int con_int);
+void stack_add(stack_t **stack, unsigned int count);
+void stack_swap(stack_t **stack, unsigned int count);
+void stack_rot1(stack_t **stack, unsigned int count);
+void stack_rotr(stack_t **stack, unsigned int count);
 #endif

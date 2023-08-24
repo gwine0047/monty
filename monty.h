@@ -74,4 +74,12 @@ void stack_add(stack_t **stack, unsigned int count);
 void stack_swap(stack_t **stack, unsigned int count);
 void stack_rot1(stack_t **stack, unsigned int count);
 void stack_rotr(stack_t **stack, unsigned int count);
+void stack_div(stack_t **stack, unsigned int count);
+void _stack(stack_t **stack, unsigned int count);
+void stack_mod(stack_t **stack, unsigned int count);
+void stack_mul(stack_t **stack, unsigned int count);
+void stack_pchar(stack_t **stack, unsigned int count);
+void stack_pstr(stack_t **stack, unsigned int count);
+void stack_sub(stack_t **stack, unsigned int count);
+void stack_nop(stack_t **stack, unsigned int count);
 #endif

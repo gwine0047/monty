@@ -30,8 +30,9 @@ void stack_push(stack_t **stack, unsigned int count)
 void stack_queue(stack_t **stack, unsigned int count)
 {
     (void) stack;
-    collect.line = 1;
     (void) count;
+
+    collect.line = 0;
 }
 
 void stack_pall(stack_t **stack, unsigned int count)
@@ -61,4 +62,10 @@ void stack_pint(stack_t **stack, unsigned int count)
         exit(EXIT_FAILURE);
     }
     printf("%d\n", (*stack)->n);
+}
+
+void stack_nop(stack_t **stack, unsigned int count)
+{
+    (void) stack;
+    (void) count;
 }

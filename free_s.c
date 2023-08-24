@@ -1,14 +1,14 @@
 #include "monty.h"
 
-void free_s(stack_t *h)
+void free_s(stack_t *stack)
 {
     stack_t *temp;
 
-    temp = h;
-    while(h != NULL)
+    temp = stack;
+    while(stack != NULL)
     {
-        temp = h->next;
-        free(h);
-        h = temp;
+        temp = stack->next;
+        free_s(stack);
+        stack = temp;
     }
 }

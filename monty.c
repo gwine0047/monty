@@ -1,4 +1,6 @@
 #include "monty.h"
+#include <stdio.h>
+
 collect collection = {NULL, NULL, NULL, 0};
 
 /**

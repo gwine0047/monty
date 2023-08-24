@@ -58,8 +58,12 @@ typedef struct con
 extern collect collection;
 
 int call(FILE *file, char *lineptr, unsigned int count, stack_t **stack);
-void free_s(stack_t **h);
-void handle_error(FILE *file, char *lineptr, unsigned int count, stack_t **stack);
+void free_s(stack_t *stack);
+void handle_error(FILE *file, char *lineptr, stack_t **stack);
 void stack_pop(stack_t **stack, unsigned int count);
+void stack_pall(stack_t **stack, unsigned int count);
+void add_queue(stack_t **stack, int con_int);
+void add_node(stack_t **stack, int con_int);
+void stack_push(stack_t **stack, unsigned int count);
 
 #endif

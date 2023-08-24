@@ -10,15 +10,14 @@ void stack_push(stack_t **stack, unsigned int count)
         free_s();
         exit(EXIT_FAILURE);
     }
-    while (collect.str[idx] != '\0')
+    for (; collect.str[idx] != '\0'; idx++)
     {
-        if (collect.str[idx] != '-' && !(isdigit(collect.str[idx])))
+        if (!isdigit(collect.str[idx]) && collect.str[idx] != '-')
         {
             fprintf(stderr, "L%d: usage: push integer\n", count);
             free_s();
             exit(EXIT_FAILURE);
         }
-        idx++;
     }
     num = atoi(collect.str);
     if (collect.structure == 1)

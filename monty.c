@@ -40,7 +40,6 @@ int main(int ac, char *av[])
     }
     initialize(file);
     line = getline(&collect.store, &n, file);
-    
     while (line != -1)
     {
         strings[0] = strtok(collect.store, " \t\n");

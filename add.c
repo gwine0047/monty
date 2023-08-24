@@ -1,6 +1,6 @@
 #include "monty.h"
 
-stack_t *add_node(stack_t **stack, int con_int)
+stack_t *add_node(stack_t **stack, const int con_int)
 {
     stack_t *new;
 
@@ -29,7 +29,7 @@ stack_t *add_node(stack_t **stack, int con_int)
     return (*stack);
 }
 
-stack_t *add_node_at_end(stack_t **stack, int con_int)
+stack_t *add_node_at_end(stack_t **stack, const int con_int)
 {
     stack_t *new, *temp;
     

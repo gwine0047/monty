@@ -5,8 +5,8 @@ int call(FILE *file, char *lineptr, unsigned int count, stack_t **stack)
     int idx = 0;
     char *token;
     instruction_t match[] = {
-        {"push", stack_push}, {"pop", stack_pop},
-        {NULL, NULL}
+        {"push", stack_push}, {"pop", stack_pop}, {"pall", stack_pall},
+        {"queue", stack_queue}, {NULL, NULL}
     };
     token = strtok(lineptr, " \n\t");
     if (token[0] == '#' && token)

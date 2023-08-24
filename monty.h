@@ -65,5 +65,6 @@ void stack_pall(stack_t **stack, unsigned int count);
 void add_queue(stack_t **stack, int con_int);
 void add_node(stack_t **stack, int con_int);
 void stack_push(stack_t **stack, unsigned int count);
+void stack_queue(stack_t **stack, unsigned int count);
 
 #endif
